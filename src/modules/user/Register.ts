@@ -4,8 +4,7 @@ import { User } from '../../entities/User'
 import { RegisterInput } from './register/RegisterInput'
 import { isAuth } from '../middleware/isAuth'
 import { sendEmail } from '../../utils/sendEmail'
-import { createConfirmationUrl } from '../../utils/createConfirmationUrl';
-// import { redis } from '../../redis';
+import { createConfirmationUrl } from '../../utils/createConfirmationUrl'
 
 @Resolver()
 export class RegisterResolver {

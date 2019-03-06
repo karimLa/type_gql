@@ -15,11 +15,11 @@ export class LoginResolver {
 
     if (!user) return null
 
-    const valid = bcrypt.compare(password, user.password)
+    const valid = await bcrypt.compare(password, user.password)
 
     if (!valid) return null
 
-    if (!user.confirmed) return null
+    // if (!user.confirmed) return null
 
     ctx.req.session!.userId = user.id
 

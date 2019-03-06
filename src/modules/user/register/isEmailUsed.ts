@@ -4,15 +4,14 @@ import {
   ValidatorConstraint,
   ValidatorConstraintInterface
 } from 'class-validator'
-import { User } from '../../../entities/User';
+import { User } from '../../../entities/User'
 
 @ValidatorConstraint({ async: true })
 export class IsEmailUsedConstraint implements ValidatorConstraintInterface {
-  validate(email: string) {
-    return User.findOne({ where: { email } }).then(user => {
-      if (user) return false
-      return true
-    })
+  async validate(email: string) {
+    const user = await User.findOne({ where: { email } })
+    if (user) return false
+    return true
   }
 }
 

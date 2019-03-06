@@ -25,7 +25,6 @@ package-lock.json
 /build
 /coverage
 *.rdb
-ormconfig.json
 
 
 # Coveralls
