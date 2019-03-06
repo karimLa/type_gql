@@ -6,7 +6,7 @@ import { User } from '../../entities/User'
 import { forgotPasswordPrefix } from '../constants/redisPrefixes'
 
 @Resolver()
-export class ForgotPassword {
+export class ForgotPasswordResolver {
   @Mutation(() => Boolean)
   async forgotPassword(
     @Arg('email') email: string
